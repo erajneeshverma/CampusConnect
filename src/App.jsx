@@ -27,7 +27,7 @@ function App() {
       <div className='w-full block'>
         <Header />
         <main>
-        Campus Connect<Outlet />
+        <Outlet />
         </main>
         <Footer />
       </div>

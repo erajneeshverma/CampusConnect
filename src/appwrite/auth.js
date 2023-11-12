@@ -11,7 +11,7 @@ export class AuthService {
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
         this.account = new Account(this.client);
-            
+       
     }
 
     async createAccount({email, password, name}) {
@@ -52,6 +52,20 @@ export class AuthService {
             await this.account.deleteSessions();
         } catch (error) {
             console.log("Appwrite serive :: logout :: error", error);
+        }
+    }
+
+    async updatePassword(email,newPassword){
+        try {
+            const userAccount = await this.account.updatePassword(newPassword);
+            if (userAccount) {
+                // call another method
+                return this.login({email, password});
+            } else {
+               return  userAccount;
+            }
+        } catch (error) {
+            console.log("Appwrite serive :: updatePassword :: error", error);
         }
     }
 }

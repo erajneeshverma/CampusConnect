@@ -96,6 +96,21 @@ export class Service{
         }
     }
 
+    async getUserPosts(userId){
+        try {
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                [
+                    Query.equal('userId', userId)
+                ]
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: getUsersPost :: error", error);
+            return false
+        }
+    }
+
     // file upload service
 
     async uploadFile(file){

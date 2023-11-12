@@ -30,9 +30,19 @@ function Header() {
       active: authStatus,
   },
   {
+    name: "My Posts",
+    slug: "/my-posts",
+    active: authStatus,
+  },
+  {
       name: "Add Post",
       slug: "/add-post",
       active: authStatus,
+  },
+  {
+    name: "Profile",
+    slug: "/profile",
+    active: authStatus,
   },
   ]
 
@@ -41,11 +51,13 @@ function Header() {
     <header className='py-3 shadow bg-gray-500'>
       <Container>
         <nav className='flex'>
-          <div className='mr-4'>
+          <div className='flex mr-4'>
             <Link to='/'>
               <Logo  />
- 
-              </Link>
+            </Link>
+            <Link to='/'>
+              <p className='text-2xl text-white font-bold text-center px-2'>CampusConnect</p>
+            </Link>
           </div>
           <ul className='flex ml-auto'>
             {navItems.map((item) => 
