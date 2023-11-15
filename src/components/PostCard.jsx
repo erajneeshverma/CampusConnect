@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Card = ({$id, title,content, featuredImage}) => {
   return (
-    <div class="relative h-[350px] w-[300px] rounded-md p-4 border-spacing-3">
+    <div class="relative h-[350px] w-[300px] rounded-md">
     <img
         src={appwriteService.getFilePreview(featuredImage)} 
         alt={title}

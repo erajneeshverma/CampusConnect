@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import authService from '../appwrite/auth';
 import ProfileLogo from '../assets/profileimage.png'
+import { Link } from 'react-router-dom';
 const MyProfile = () => {
 
     const [user, setUser] = useState([])
@@ -58,12 +59,14 @@ const MyProfile = () => {
             #posts
           </span>
         </div>
+        <Link to={`/my-posts`}>
         <button
           type="button"
           class="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
         >
           Read Experinces
         </button>
+        </Link>
       </div>
     </div>
      </div>
