@@ -14,7 +14,7 @@ const Card = ({$id, title,content, featuredImage}) => {
     <div class="absolute bottom-4 left-4 text-left px-2">
         <h1 class="text-lg font-semibold text-white ">{title}</h1>
         <Link to={`/post/${$id}`}>
-        <button class="mt-2 p-2 bg-lime-300 rounded-md inline-flex cursor-pointer text-center items-center text-md font-semibold text-black">
+        <button class="mt-2 p-2 bg-lime-300 rounded-md inline-flex cursor-pointer text-center items-center text-md font-semibold text-white">
             View Post
         </button>
         </Link>

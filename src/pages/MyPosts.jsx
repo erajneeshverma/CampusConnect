@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Container, PostCard } from '../components'
 import appwriteService from "../appwrite/config";
 import authService from '../appwrite/auth';
+import AddPost from './AddPost';
 
 const MyPosts = ({post}) => {
     
@@ -23,7 +24,7 @@ const MyPosts = ({post}) => {
     },[])
 
   return (
-    <div className='w-full py-8'>
+    (posts.length === 0) ? (<AddPost />) : (<div className='w-full py-8'>
         <Container>
             <div className='flex flex-wrap'>
                 {posts.map((post) => (
@@ -32,8 +33,8 @@ const MyPosts = ({post}) => {
                     </div>
                 ))}
             </div>
-            </Container>
-    </div>
+        </Container>
+    </div>)
   )
 }
 
